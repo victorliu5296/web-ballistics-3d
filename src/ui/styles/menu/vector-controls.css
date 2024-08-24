@@ -1,0 +1,39 @@
+/* Basic styles for vector control panels */
+.vector-controls {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+    margin-bottom: 2vh;
+    /* Using viewport height percentage for margins */
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.vector-controls h3 {
+    text-align: center;
+    /* Adjust top and bottom margin as needed */
+}
+
+.vector-controls label,
+.vector-controls input[type="number"] {
+    display: block;
+    /* Makes them stack vertically */
+    margin: auto;
+    /* Will center align them if they have a set width */
+    text-align: center;
+    /* Center aligns the text */
+}
+
+.vector-controls input[type="number"] {
+    width: 90%;
+    /* Or whatever width you prefer */
+    margin-bottom: 5px;
+    /* Adds spacing between the inputs */
+}
+
+.vector-controls button {
+    display: block;
+    /* Makes the button a block-level element */
+    margin: 5px auto;
+    /* Centers the button with automatic horizontal margins */
+}

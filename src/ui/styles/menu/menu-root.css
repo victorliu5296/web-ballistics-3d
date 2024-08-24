@@ -1,0 +1,5 @@
+/* General CSS variable definitions */
+:root {
+    --interface-max-width: 250px;
+    --vector-controls-padding: 15px;
+}

@@ -1,0 +1,13 @@
+select {
+    position: relative;
+    width: calc(100% - 40px);
+    /* Subtracting the total left and right padding */
+    margin: 10px 20px;
+    /* This centers the dropdown and adds top and bottom margin */
+    padding: 5px;
+    /* Adjust as needed */
+    box-sizing: border-box;
+    /* This ensures that padding and border are included in the width */
+    text-align: center;
+    /* This will center the text inside the dropdown */
+}

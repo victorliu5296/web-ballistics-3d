@@ -1,0 +1,51 @@
+{
+  "homepage": "https://the2innkeeper.github.io/3DWebBallistics/",
+  "name": "@the2innkeeper/web-ballistics-3d",
+  "version": "0.0.0",
+  "description": "A 3D ballistics simulation app within the browser using Three.js",
+  "main": "./dist/app.js",
+  "types": "./dist/app.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "jest",
+    "build": "webpack",
+    "compile": "tsc"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "web-ballistics-3d"
+  },
+  "keywords": [
+    "three.js",
+    "ballistics",
+    "simulation"
+  ],
+  "author": "The2Innkeeper",
+  "license": "ISC",
+  "dependencies": {
+    "css-loader": "^7.1.1",
+    "dat.gui": "^0.7.9",
+    "polynomial-real-root-finding": "^1.0.1",
+    "three": "^0.126.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/three": "^0.163.0",
+    "copy-webpack-plugin": "^12.0.2",
+    "glob": "^10.3.12",
+    "jest": "^29.7.0",
+    "mini-css-extract-plugin": "^2.9.0",
+    "style-loader": "^4.0.0",
+    "ts-jest": "^29.1.2",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.5",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  }
+}

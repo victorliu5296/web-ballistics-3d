@@ -1,0 +1,31 @@
+/* Interface sidebar for control elements */
+.interface {
+    position: absolute;
+    width: 25vw;
+    /* Use viewport width for a responsive sidebar width */
+    max-width: var(--interface-max-width);
+    /* Optional max-width to prevent sidebar from becoming too wide on large screens */
+    height: 100vh;
+    /* Full height of the viewport */
+    background: #fff;
+    color: #000000;
+    padding: 10px;
+    border-right: 1px solid #ccc;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-out;
+}
+
+.interface-hidden {
+    transform: translateX(calc(-1 * var(--interface-max-width)));
+}
+
+.interface h3 {
+    text-align: center;
+}
+
+.interface button {
+    display: block;
+    /* Makes the button a block-level element */
+    margin: 5px auto;
+    /* Centers the button with automatic horizontal margins */
+}

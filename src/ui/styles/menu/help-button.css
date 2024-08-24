@@ -1,0 +1,28 @@
+.help-button {
+    background-color: #007bff;
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+    margin-left: 5px;
+    text-align: center;
+    padding: 0;
+    transition: background-color 0.3s;
+}
+
+.help-button:hover {
+    background-color: #0056b3;
+}
+
+.tooltip {
+    background-color: #000;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 12px;
+    padding: 5px;
+    position: relative;
+}
