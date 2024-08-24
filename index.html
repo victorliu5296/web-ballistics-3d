@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Ballistics Simulator</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./assets/favicon.png" type="image/png">
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+</head>
+
+<body>
+    <button id="menu-toggle" class="menu-toggle">☰</button>
+    <div id="interface-container" class="interface">
+        <div id="menu" class="menu">
+            <select id="menuSelector">
+                <option value="target">Target</option>
+                <option value="shooter">Shooter</option>
+                <option value="projectile">Projectile</option>
+                <option value="gameParameters">Game Parameters</option>
+            </select>
+            <div id="vectorControlsContainer"></div>
+            <div id="targetVectors" class="vector-container"></div>
+            <div id="shooterVectors" class="vector-container"></div>
+            <div id="projectileVectors" class="vector-container"></div>
+        </div>
+    </div>
+    
+    <div id="scene-container" class="simulation"></div>
+
+    <div id="top-right-buttons" class="top-right-buttons">
+        <button id="spawn-target" class="button">Spawn Target</button>
+        <button id="spawn-random-target" class="button">Spawn Random Target</button>
+        <button id="fire-projectile" class="button">Fire Projectile</button>
+    </div>
+
+    <div id="bottom-right-buttons" class="bottom-right-buttons">
+        <button id="tutorial-button" class="button">Start Tutorial</button>
+    </div>
+    
+    <!-- Tutorial container -->
+    <div id="tutorial-container" class="tutorial-container">
+        <div id="tutorial-controls" class="tutorial-controls">
+            <button id="tutorial-prev" class="button">Previous</button>
+            <button id="tutorial-next" class="button">Next</button>
+        </div>
+    </div>
+
+    <div id="tutorial-overlay">
+        <div id="tutorial-popup" class="tutorial-popup">
+            <div id="tutorial-text" class="tutorial-text"></div>
+        </div>
+    </div>
+
+    <!-- Main Application Script -->
+    <script type="module" src="./bundle.js"></script>
+</body>
+
+</html>
