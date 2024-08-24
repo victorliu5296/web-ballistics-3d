@@ -1,0 +1,340 @@
+/*!******************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/ui/styles/menu/vector-controls.css ***!
+  \******************************************************************************************/
+/* Basic styles for vector control panels */
+.vector-controls {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+    margin-bottom: 2vh;
+    /* Using viewport height percentage for margins */
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.vector-controls h3 {
+    text-align: center;
+    /* Adjust top and bottom margin as needed */
+}
+
+.vector-controls label,
+.vector-controls input[type="number"] {
+    display: block;
+    /* Makes them stack vertically */
+    margin: auto;
+    /* Will center align them if they have a set width */
+    text-align: center;
+    /* Center aligns the text */
+}
+
+.vector-controls input[type="number"] {
+    width: 90%;
+    /* Or whatever width you prefer */
+    margin-bottom: 5px;
+    /* Adds spacing between the inputs */
+}
+
+.vector-controls button {
+    display: block;
+    /* Makes the button a block-level element */
+    margin: 5px auto;
+    /* Centers the button with automatic horizontal margins */
+}
+/*!***********************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/ui/styles/menu/tutorial.css ***!
+  \***********************************************************************************/
+.tutorial-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    pointer-events: auto;
+    z-index: 9999;
+}
+
+.tutorial-highlight {
+    position: relative;
+    border: 2px solid #ff0;
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+    z-index: 10000;
+}
+
+.tutorial-popup {
+    position: absolute;
+    display: none;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.tutorial-text {
+    margin-bottom: 10px;
+}
+/*!********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/ui/styles/menu/tutorial-controls.css ***!
+  \********************************************************************************************/
+.tutorial-controls {
+    position: fixed; /* Fixed positioning to stay at the bottom of the screen */
+    display: none; /* Hide by default */
+    bottom: 10px;
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust to truly center the element */
+    z-index: 10001;
+    gap: 10px;
+}
+/*!********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/ui/styles/menu/top-right-buttons.css ***!
+  \********************************************************************************************/
+/* Add styles for the top-right buttons container */
+.top-right-buttons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+/*!*******************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/ui/styles/menu/menu.css ***!
+  \*******************************************************************************/
+.menu {
+    overflow-y: auto;
+    transition: max-height 0.3s ease-out;
+    max-height: calc(100vh - 2 * var(--vector-controls-padding));
+}
+
+.menu-toggle {
+    position: fixed;
+    padding: 10px 15px;
+    top: 10px;
+    left: 10px;
+    background: #007bff;
+    /* Add box-shadow for depth */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 8px;
+}
+/*!************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/ui/styles/menu/menu-root.css ***!
+  \************************************************************************************/
+/* General CSS variable definitions */
+:root {
+    --interface-max-width: 250px;
+    --vector-controls-padding: 15px;
+}
+/*!************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/ui/styles/menu/interface.css ***!
+  \************************************************************************************/
+/* Interface sidebar for control elements */
+.interface {
+    position: absolute;
+    width: 25vw;
+    /* Use viewport width for a responsive sidebar width */
+    max-width: var(--interface-max-width);
+    /* Optional max-width to prevent sidebar from becoming too wide on large screens */
+    height: 100vh;
+    /* Full height of the viewport */
+    background: #fff;
+    color: #000000;
+    padding: 10px;
+    border-right: 1px solid #ccc;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-out;
+}
+
+.interface-hidden {
+    transform: translateX(calc(-1 * var(--interface-max-width)));
+}
+
+.interface h3 {
+    text-align: center;
+}
+
+.interface button {
+    display: block;
+    /* Makes the button a block-level element */
+    margin: 5px auto;
+    /* Centers the button with automatic horizontal margins */
+}
+/*!********************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/ui/styles/menu/input.css ***!
+  \********************************************************************************/
+/* Styling for input fields and selectors to maintain consistency */
+input[type='number'],
+select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 0px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[readonly] {
+    background-color: #e0e0e0;
+    /* A light gray background */
+    color: #7d7d7d;
+    /* Optional: change the text color to indicate non-editability */
+}
+
+input[readonly]:focus {
+    background-color: #e0e0e0;
+    /* Keep the background the same even when focused */
+    color: #7d7d7d;
+    outline: none;
+    /* Removes the default focus outline */
+}
+/*!**************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/ui/styles/menu/help-button.css ***!
+  \**************************************************************************************/
+.help-button {
+    background-color: #007bff;
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+    margin-left: 5px;
+    text-align: center;
+    padding: 0;
+    transition: background-color 0.3s;
+}
+
+.help-button:hover {
+    background-color: #0056b3;
+}
+
+.tooltip {
+    background-color: #000;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 12px;
+    padding: 5px;
+    position: relative;
+}
+/*!***********************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/ui/styles/menu/dropdown.css ***!
+  \***********************************************************************************/
+select {
+    position: relative;
+    width: calc(100% - 40px);
+    /* Subtracting the total left and right padding */
+    margin: 10px 20px;
+    /* This centers the dropdown and adds top and bottom margin */
+    padding: 5px;
+    /* Adjust as needed */
+    box-sizing: border-box;
+    /* This ensures that padding and border are included in the width */
+    text-align: center;
+    /* This will center the text inside the dropdown */
+}
+/*!*********************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/ui/styles/menu/button.css ***!
+  \*********************************************************************************/
+/* Styling for buttons to make them visually appealing */
+button {
+    position: relative;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    /* Add transition for interactive effect */
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    background-color: #0069d9;
+    /* Elevate button on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+button[disabled] {
+    background-color: #dcdcdc;
+    /* A different shade of gray */
+    color: #a0a0a0;
+    cursor: not-allowed;
+    /* Shows a 'no action' cursor */
+    opacity: 0.7;
+    pointer-events: none;
+}
+/*!***********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/ui/styles/menu/bottom-right-buttons.css ***!
+  \***********************************************************************************************/
+.bottom-right-buttons {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 10001;
+    display: flex;
+}   
+/*!**************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/ui/styles/ballistics/scene.css ***!
+  \**************************************************************************************/
+/* scene.css - Styles specific to the 3D scene display area */
+.simulation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+}
+/*!********************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/ui/styles/app/styles.css ***!
+  \********************************************************************************/
+/* * {
+    position: relative;
+}
+
+.absolute-element {
+    position: absolute;
+}
+
+.fixed-element {
+    position: fixed;
+} */
+/*!******************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/ui/styles/app/main.css ***!
+  \******************************************************************************/
+/* main.css - General styles applicable across the entire application */
+
+body {
+    position: relative;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #fff;
+    color: #000000;
+    margin: 0;
+    line-height: 1.6;
+    z-index: -2;
+}
+
+/* Make sure the body doesn't have any extra padding or margins */
+body,
+html {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
