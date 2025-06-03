@@ -137,7 +137,7 @@ export class PhysicsSolver {
      * @param {number} timeToTarget - The time of intersection between the target and projectile
      * @param {number} indexToMinimize - The index to minimize
      * @return {Vector3} The calculated initial derivative
-     * @see https://github.com/victorliu5296/CrazyBallistics/blob/main/explanation-docs/physics/0-solution_approach.md
+     * @see https://github.com/The2Innkeeper/CrazyBallistics/blob/main/explanation-docs/physics/0-solution_approach.md
      */
     static calculateInitialDerivative(scaledRelativeVectors: Vector3[], timeToTarget: number, indexToMinimize: number): Vector3 {
         let hornerResult = scaledRelativeVectors[scaledRelativeVectors.length - 1].clone();
@@ -153,7 +153,7 @@ export class PhysicsSolver {
      * @param {Vector3[]} scaledRelativeVectors array of scaled relative vectors
      * @param {number} timeToTarget the time of intersection between the target and projectile
      * @returns {Vector3} the minimized initial velocity
-     * @see https://en.wikipedia.org/wiki/Horner%27s_method and https://github.com/victorliu5296/CrazyBallistics/blob/main/explanation-docs/physics/0-solution_approach.md
+     * @see https://en.wikipedia.org/wiki/Horner%27s_method and https://github.com/The2Innkeeper/CrazyBallistics/blob/main/explanation-docs/physics/0-solution_approach.md
      */
     static calculateInitialVelocity(scaledRelativeVectors: Vector3[], timeToTarget: number): Vector3 {
         // Initialize the result as the last element of the array
