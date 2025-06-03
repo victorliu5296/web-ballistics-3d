@@ -11,11 +11,15 @@
   "scripts": {
     "test": "jest",
     "build": "webpack",
-    "compile": "tsc"
+    "compile": "tsc",
+    "benchmark": "node bench/runBenchmark.js"
   },
   "jest": {
     "preset": "ts-jest",
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "transformIgnorePatterns": [
+      "/node_modules/(?!(polynomial-real-root-finding)/)"
+    ]
   },
   "repository": {
     "type": "git",
@@ -31,8 +35,11 @@
   "dependencies": {
     "css-loader": "^7.1.1",
     "dat.gui": "^0.7.9",
+    "durand-kerner": "^1.0.0",
+    "poly-roots": "^1.0.8",
     "polynomial-real-root-finding": "^1.0.1",
-    "three": "^0.126.1"
+    "three": "^0.126.1",
+    "ts-node": "^10.9.2"
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",
