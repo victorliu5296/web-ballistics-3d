@@ -1,4 +1,5 @@
 import { EventEmitter } from './EventEmitter';
+import { EventCallback } from './types/EventCallback';
 
 export class EventBus {
     private emitters: Map<Function, EventEmitter<any>> = new Map();

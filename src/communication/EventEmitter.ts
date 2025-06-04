@@ -1,3 +1,5 @@
+import { EventCallback } from './types/EventCallback';
+
 export class EventEmitter<T> {
     private listeners: Map<EventCallback<T>, any> = new Map();
 
