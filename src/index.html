@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3D Ballistics Simulator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
     <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
     <link rel="icon" href="./assets/favicon.png" type="image/png">
@@ -12,7 +15,14 @@
 </head>
 
 <body>
-    <button id="menu-toggle" class="menu-toggle">☰</button>
+    <header id="app-header" class="app-header">
+        <button id="menu-toggle" class="menu-toggle">☰</button>
+        <div class="header-actions">
+            <button id="spawn-target" class="button">Spawn Target</button>
+            <button id="spawn-random-target" class="button">Spawn Random Target</button>
+            <button id="fire-projectile" class="button">Fire Projectile</button>
+        </div>
+    </header>
     <div id="interface-container" class="interface">
         <div id="menu" class="menu">
             <select id="menuSelector">
@@ -29,12 +39,6 @@
     </div>
     
     <div id="scene-container" class="simulation"></div>
-
-    <div id="top-right-buttons" class="top-right-buttons">
-        <button id="spawn-target" class="button">Spawn Target</button>
-        <button id="spawn-random-target" class="button">Spawn Random Target</button>
-        <button id="fire-projectile" class="button">Fire Projectile</button>
-    </div>
 
     <div id="bottom-right-buttons" class="bottom-right-buttons">
         <button id="tutorial-button" class="button">Start Tutorial</button>

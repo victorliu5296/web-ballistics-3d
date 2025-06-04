@@ -3,7 +3,7 @@
 body {
     position: relative;
     font-family: 'Open Sans', sans-serif;
-    background-color: #fff;
+    background: var(--background-gradient, #fff);
     color: #000000;
     margin: 0;
     line-height: 1.6;

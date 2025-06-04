@@ -2,4 +2,8 @@
 :root {
     --interface-max-width: 250px;
     --vector-controls-padding: 15px;
+    --header-height: 50px;
+    --primary-color: #007bff;
+    --primary-color-dark: #0056b3;
+    --background-gradient: linear-gradient(to bottom right, #f8f9fa, #e9ecef);
 }
