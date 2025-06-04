@@ -1,0 +1,9 @@
+.tutorial-controls {
+    position: fixed; /* Fixed positioning to stay at the bottom of the screen */
+    display: none; /* Hide by default */
+    bottom: 10px;
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust to truly center the element */
+    z-index: 10001;
+    gap: 10px;
+}

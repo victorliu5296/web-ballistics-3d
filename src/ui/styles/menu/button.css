@@ -1,0 +1,33 @@
+/* Styling for buttons to make them visually appealing */
+button {
+    position: relative;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    /* Add transition for interactive effect */
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    background-color: #0069d9;
+    /* Elevate button on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+button[disabled] {
+    background-color: #dcdcdc;
+    /* A different shade of gray */
+    color: #a0a0a0;
+    cursor: not-allowed;
+    /* Shows a 'no action' cursor */
+    opacity: 0.7;
+    pointer-events: none;
+}

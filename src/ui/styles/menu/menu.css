@@ -1,0 +1,21 @@
+.menu {
+    overflow-y: auto;
+    transition: max-height 0.3s ease-out;
+    max-height: calc(100vh - 2 * var(--vector-controls-padding));
+}
+
+.menu-toggle {
+    position: fixed;
+    padding: 10px 15px;
+    top: 10px;
+    left: 10px;
+    background: #007bff;
+    /* Add box-shadow for depth */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 8px;
+}

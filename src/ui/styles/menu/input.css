@@ -1,0 +1,26 @@
+/* Styling for input fields and selectors to maintain consistency */
+input[type='number'],
+select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 0px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[readonly] {
+    background-color: #e0e0e0;
+    /* A light gray background */
+    color: #7d7d7d;
+    /* Optional: change the text color to indicate non-editability */
+}
+
+input[readonly]:focus {
+    background-color: #e0e0e0;
+    /* Keep the background the same even when focused */
+    color: #7d7d7d;
+    outline: none;
+    /* Removes the default focus outline */
+}
