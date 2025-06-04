@@ -2,7 +2,7 @@ import { Vector3 } from 'three';
 /**
  * Applies a Taylor shift transformation to a vector coefficient polynomial.
  * @param vectors Array of THREE.Vector3 objects to transform.
- * @param shift THREE.Vector3 representing the shift to apply.
+ * @param shift Numeric value representing the scalar time shift to apply.
  * @returns The vectors coefficients of the polynomial s(T + shift)
  */
 export function vectorTaylorShift(vectors: Vector3[], shift: number): Vector3[] {
