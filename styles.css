@@ -86,6 +86,15 @@
     z-index: 10001;
     gap: 10px;
 }
+/*!********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/ui/styles/menu/top-right-buttons.css ***!
+  \********************************************************************************************/
+/* Add styles for the top-right buttons container */
+.top-right-buttons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
 /*!*******************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/ui/styles/menu/menu.css ***!
   \*******************************************************************************/
@@ -96,9 +105,11 @@
 }
 
 .menu-toggle {
-    position: relative;
+    position: fixed;
     padding: 10px 15px;
-    background: var(--primary-color);
+    top: 10px;
+    left: 10px;
+    background: #007bff;
     /* Add box-shadow for depth */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     border: none;
@@ -108,10 +119,6 @@
     text-align: center;
     border-radius: 8px;
 }
-
-.menu-toggle:hover {
-    background: var(--primary-color-dark);
-}
 /*!************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/ui/styles/menu/menu-root.css ***!
   \************************************************************************************/
@@ -119,10 +126,6 @@
 :root {
     --interface-max-width: 250px;
     --vector-controls-padding: 15px;
-    --header-height: 50px;
-    --primary-color: #007bff;
-    --primary-color-dark: #0056b3;
-    --background-gradient: linear-gradient(to bottom right, #f8f9fa, #e9ecef);
 }
 /*!************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/ui/styles/menu/interface.css ***!
@@ -130,18 +133,16 @@
 /* Interface sidebar for control elements */
 .interface {
     position: absolute;
-    top: var(--header-height);
     width: 25vw;
     /* Use viewport width for a responsive sidebar width */
     max-width: var(--interface-max-width);
     /* Optional max-width to prevent sidebar from becoming too wide on large screens */
-    height: calc(100vh - var(--header-height));
-    /* Adjust height to account for the header */
-    background: rgba(255, 255, 255, 0.95);
+    height: 100vh;
+    /* Full height of the viewport */
+    background: #fff;
     color: #000000;
     padding: 10px;
     border-right: 1px solid #ccc;
-    border-radius: 0 8px 8px 0;
     box-sizing: border-box;
     transition: transform 0.3s ease-out;
 }
@@ -193,7 +194,7 @@ input[readonly]:focus {
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/ui/styles/menu/help-button.css ***!
   \**************************************************************************************/
 .help-button {
-    background-color: var(--primary-color);
+    background-color: #007bff;
     border: none;
     border-radius: 50%;
     color: #fff;
@@ -209,7 +210,7 @@ input[readonly]:focus {
 }
 
 .help-button:hover {
-    background-color: var(--primary-color-dark);
+    background-color: #0056b3;
 }
 
 .tooltip {
@@ -220,29 +221,6 @@ input[readonly]:focus {
     padding: 5px;
     position: relative;
 }
-/*!*********************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/ui/styles/menu/header.css ***!
-  \*********************************************************************************/
-.app-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: var(--header-height);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 10px;
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 10002;
-}
-
-.header-actions {
-    display: flex;
-    gap: 10px;
-}
-
 /*!***********************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/ui/styles/menu/dropdown.css ***!
   \***********************************************************************************/
@@ -265,7 +243,7 @@ select {
 /* Styling for buttons to make them visually appealing */
 button {
     position: relative;
-    background-color: var(--primary-color);
+    background-color: #007bff;
     border: none;
     color: white;
     padding: 8px 16px;
@@ -281,7 +259,7 @@ button {
 }
 
 button:hover {
-    background-color: var(--primary-color-dark);
+    background-color: #0069d9;
     /* Elevate button on hover */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
@@ -304,19 +282,17 @@ button[disabled] {
     right: 10px;
     z-index: 10001;
     display: flex;
-    gap: 10px;
-}
-
+}   
 /*!**************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/ui/styles/ballistics/scene.css ***!
   \**************************************************************************************/
 /* scene.css - Styles specific to the 3D scene display area */
 .simulation {
     position: absolute;
-    top: var(--header-height);
+    top: 0;
     left: 0;
     width: 100%;
-    height: calc(100vh - var(--header-height));
+    height: 100%;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -345,7 +321,7 @@ button[disabled] {
 body {
     position: relative;
     font-family: 'Open Sans', sans-serif;
-    background: var(--background-gradient, #fff);
+    background-color: #fff;
     color: #000000;
     margin: 0;
     line-height: 1.6;

@@ -70,16 +70,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 
 /***/ }),
 
-/***/ "./src/ui/styles/menu/header.css":
-/*!***************************************!*\
-  !*** ./src/ui/styles/menu/header.css ***!
-  \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://@victorliu5296/web-ballistics-3d/./src/ui/styles/menu/header.css?");
-
-/***/ }),
-
 /***/ "./src/ui/styles/menu/help-button.css":
 /*!********************************************!*\
   !*** ./src/ui/styles/menu/help-button.css ***!
@@ -127,6 +117,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://@victorliu5296/web-ballistics-3d/./src/ui/styles/menu/menu.css?");
+
+/***/ }),
+
+/***/ "./src/ui/styles/menu/top-right-buttons.css":
+/*!**************************************************!*\
+  !*** ./src/ui/styles/menu/top-right-buttons.css ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://@victorliu5296/web-ballistics-3d/./src/ui/styles/menu/top-right-buttons.css?");
 
 /***/ }),
 
@@ -764,12 +764,12 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	__webpack_require__("./src/ui/styles/menu/vector-controls.css");
 /******/ 	__webpack_require__("./src/ui/styles/menu/tutorial.css");
 /******/ 	__webpack_require__("./src/ui/styles/menu/tutorial-controls.css");
+/******/ 	__webpack_require__("./src/ui/styles/menu/top-right-buttons.css");
 /******/ 	__webpack_require__("./src/ui/styles/menu/menu.css");
 /******/ 	__webpack_require__("./src/ui/styles/menu/menu-root.css");
 /******/ 	__webpack_require__("./src/ui/styles/menu/interface.css");
 /******/ 	__webpack_require__("./src/ui/styles/menu/input.css");
 /******/ 	__webpack_require__("./src/ui/styles/menu/help-button.css");
-/******/ 	__webpack_require__("./src/ui/styles/menu/header.css");
 /******/ 	__webpack_require__("./src/ui/styles/menu/dropdown.css");
 /******/ 	__webpack_require__("./src/ui/styles/menu/button.css");
 /******/ 	__webpack_require__("./src/ui/styles/menu/bottom-right-buttons.css");
