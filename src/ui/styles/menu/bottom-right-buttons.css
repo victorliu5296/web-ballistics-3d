@@ -4,4 +4,5 @@
     right: 10px;
     z-index: 10001;
     display: flex;
-}   
+    gap: 10px;
+}
