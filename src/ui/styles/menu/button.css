@@ -1,7 +1,7 @@
 /* Styling for buttons to make them visually appealing */
 button {
     position: relative;
-    background-color: var(--primary-color);
+    background-color: #007bff;
     border: none;
     color: white;
     padding: 8px 16px;
@@ -17,7 +17,7 @@ button {
 }
 
 button:hover {
-    background-color: var(--primary-color-dark);
+    background-color: #0069d9;
     /* Elevate button on hover */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
