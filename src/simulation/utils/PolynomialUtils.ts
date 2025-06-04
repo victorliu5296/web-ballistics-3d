@@ -68,3 +68,8 @@ export function findPositiveRoots(poly: Polynomial, tol = 1e-7): number[] {
     }
     return roots;
 }
+
+export function hasPositiveRoots(poly: Polynomial, tol = 1e-7): boolean {
+    const roots = findPositiveRoots(poly, tol);
+    return roots.length > 0;
+}

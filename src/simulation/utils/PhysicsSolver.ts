@@ -2,9 +2,10 @@ import { Vector3 } from "three";
 import {
   Polynomial,
   evaluatePolynomial,
-  findStrictlyPositiveRoots,
-  hasStrictlyPositiveRoots,
-} from "polynomial-real-root-finding";
+  findPositiveRoots,
+  polynomialDerivative,
+  hasPositiveRoots,
+} from "./PolynomialUtils";
 import { computeDisplacementDerivatives } from "./MovementUtils";
 import { LaurentPolynomial } from "./LaurentPolynomial";
 import { vectorTaylorShift } from "./vectorTaylorShift";
@@ -143,7 +144,7 @@ export class PhysicsSolver {
       .convertToNumeratorPolynomial();
 
     // Check for roots using Descartes's rule of signs (if 0 sign variations then no positive roots exist)
-    if (!hasStrictlyPositiveRoots(derivativeNumeratorPolynomial)) {
+    if (!hasPositiveRoots(derivativeNumeratorPolynomial)) {
       // If no roots exist, use the provided fallback intersection time
       return this.calculateInitialDerivative(
         scaledRelativeVectors,
@@ -153,7 +154,7 @@ export class PhysicsSolver {
     }
 
     // Find all roots of the derivative polynomial
-    const criticalTimes = findStrictlyPositiveRoots(
+    const criticalTimes = findPositiveRoots(
       derivativeNumeratorPolynomial,
       1e-5
     );
@@ -277,7 +278,7 @@ export class PhysicsSolver {
       .convertToNumeratorPolynomial();
 
     // Find all roots of the derivative polynomial
-    const criticalTimes = findStrictlyPositiveRoots(
+    const criticalTimes = findPositiveRoots(
       derivativeNumeratorPolynomial,
       1e-6
     );
@@ -299,6 +300,107 @@ export class PhysicsSolver {
 
     // Return the minimum initial velocity
     return minimizedInitialVelocity;
+  }
+
+  /** Compute dot product polynomial of two vector coefficient arrays */
+  private static expandMixedDotProductPolynomial(
+    vectorsA: Vector3[],
+    vectorsB: Vector3[]
+  ): Polynomial {
+    const resultLength = vectorsA.length + vectorsB.length - 1;
+    const result = new Array(resultLength).fill(0);
+    for (let i = 0; i < vectorsA.length; i++) {
+      for (let j = 0; j < vectorsB.length; j++) {
+        result[i + j] += vectorsA[i].dot(vectorsB[j]);
+      }
+    }
+    return result;
+  }
+
+  /** Derivative of a vector polynomial */
+  private static derivativeVectorPolynomial(vectors: Vector3[]): Vector3[] {
+    if (vectors.length <= 1) return [new Vector3(0, 0, 0)];
+    const result: Vector3[] = new Array(vectors.length - 1)
+      .fill(null)
+      .map(() => new Vector3());
+    for (let i = 1; i < vectors.length; i++) {
+      result[i - 1].copy(vectors[i]).multiplyScalar(i);
+    }
+    return result;
+  }
+
+  /**
+   * Solve for the earliest intersection time given an initial speed.
+   * Returns the initial velocity achieving the intersection or null if no
+   * positive solution exists.
+   */
+  static initialVelocityForSpeed(
+    scaledTargetVectors: Vector3[],
+    scaledProjectileVectors: Vector3[],
+    speed: number,
+    precision = 1e-6
+  ): { time: number; velocity: Vector3 } | null {
+    const relative = computeDisplacementDerivatives(
+      scaledProjectileVectors,
+      scaledTargetVectors
+    );
+
+    let poly = this.expandDotProductPolynomial(relative).slice();
+    if (poly.length <= 2) {
+      while (poly.length <= 2) poly.push(0);
+    }
+    poly[2] -= speed * speed;
+
+    const roots = findPositiveRoots(poly, precision);
+    if (roots.length === 0) return null;
+    const time = Math.min(...roots);
+    const velocity = this.calculateInitialVelocity(relative, time);
+    return { time, velocity };
+  }
+
+  /**
+   * Calculate the minimum initial speed needed to intersect the target.
+   * Returns null if no positive solution for the critical time exists.
+   */
+  static minimizedSpeedInitialVelocity(
+    scaledTargetVectors: Vector3[],
+    scaledProjectileVectors: Vector3[],
+    precision = 1e-6
+  ): { speed: number; time: number; velocity: Vector3 } | null {
+    const relative = computeDisplacementDerivatives(
+      scaledProjectileVectors,
+      scaledTargetVectors
+    );
+
+    const derivativeVec = this.derivativeVectorPolynomial(relative);
+    const derivativeVecT = [new Vector3(0, 0, 0), ...derivativeVec];
+    const wVec: Vector3[] = new Array(relative.length)
+      .fill(null)
+      .map(() => new Vector3());
+    for (let i = 0; i < relative.length; i++) {
+      const a = derivativeVecT[i] ?? new Vector3(0, 0, 0);
+      wVec[i].copy(a).sub(relative[i]);
+    }
+
+    const p = this.expandMixedDotProductPolynomial(relative, wVec);
+    const q = this.expandDotProductPolynomial(relative);
+
+    const roots = findPositiveRoots(p, precision);
+    if (roots.length === 0) return null;
+
+    let bestTime = roots[0];
+    let bestSpeed = Math.sqrt(evaluatePolynomial(q, bestTime)) / bestTime;
+    for (let i = 1; i < roots.length; i++) {
+      const t = roots[i];
+      const speedAtT = Math.sqrt(evaluatePolynomial(q, t)) / t;
+      if (speedAtT < bestSpeed) {
+        bestSpeed = speedAtT;
+        bestTime = t;
+      }
+    }
+
+    const velocity = this.calculateInitialVelocity(relative, bestTime);
+    return { speed: bestSpeed, time: bestTime, velocity };
   }
 }
 
