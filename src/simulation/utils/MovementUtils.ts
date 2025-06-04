@@ -3,11 +3,13 @@ import * as THREE from 'three';
 import { scaledDeltaSTDerivatives, scaledDeltaSPDerivatives } from '../components/MovementComponents';
 
 /**
- * Computes the displacement derivatives between from the first entity (tail) to the second entity (tip).
- * ABdisplacement[i] = B[i] - A[i]
+ * Computes the displacement derivatives from a tail entity to a tip entity.
+ * Displacement[i] = tip[i] - tail[i]
  *
- * @param {THREE.Vector3[]} tipPositionDerivatives - The first entity's position derivatives.
- * @param {THREE.Vector3[]} tailPositionDerivatives - The second entity's position derivatives.
+ * @param {THREE.Vector3[]} tailPositionDerivatives - Position derivatives of the tail
+ *   (subtrahend) of the displacement vector.
+ * @param {THREE.Vector3[]} tipPositionDerivatives - Position derivatives of the tip
+ *   (minuend) of the displacement vector.
  * @return {THREE.Vector3[]} The computed displacement derivatives = tip - tail.
  */
 export function computeDisplacementDerivatives(
