@@ -302,15 +302,3 @@ export class PhysicsSolver {
   }
 }
 
-/**
- * Calculate the binomial coefficient (n choose k).
- * @param n The total number of items.
- * @param k The number of items to choose.
- * @returns The binomial coefficient.
- */
-function binomial(n: number, k: number): number {
-  let coeff = 1;
-  for (let i = n - k + 1; i <= n; i++) coeff *= i;
-  for (let i = 1; i <= k; i++) coeff /= i;
-  return coeff;
-}
