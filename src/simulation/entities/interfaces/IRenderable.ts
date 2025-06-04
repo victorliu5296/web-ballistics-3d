@@ -6,5 +6,5 @@ export interface IRenderable {
     createMesh(): void;
     updateMesh(): void;
     addToScene(scene: THREE.Scene): void;
-    removeFromScene(scene: THREE.Scene): void;
+    removeFromScene(): void;
 }
