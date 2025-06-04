@@ -1,18 +1,16 @@
 /* Interface sidebar for control elements */
 .interface {
     position: absolute;
-    top: var(--header-height);
     width: 25vw;
     /* Use viewport width for a responsive sidebar width */
     max-width: var(--interface-max-width);
     /* Optional max-width to prevent sidebar from becoming too wide on large screens */
-    height: calc(100vh - var(--header-height));
-    /* Adjust height to account for the header */
-    background: rgba(255, 255, 255, 0.95);
+    height: 100vh;
+    /* Full height of the viewport */
+    background: #fff;
     color: #000000;
     padding: 10px;
     border-right: 1px solid #ccc;
-    border-radius: 0 8px 8px 0;
     box-sizing: border-box;
     transition: transform 0.3s ease-out;
 }

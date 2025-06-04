@@ -1,5 +1,5 @@
 .help-button {
-    background-color: var(--primary-color);
+    background-color: #007bff;
     border: none;
     border-radius: 50%;
     color: #fff;
@@ -15,7 +15,7 @@
 }
 
 .help-button:hover {
-    background-color: var(--primary-color-dark);
+    background-color: #0056b3;
 }
 
 .tooltip {
